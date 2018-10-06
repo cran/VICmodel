@@ -49,12 +49,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *****************************************************************************/
 
-#ifndef VIC_LOG_H
-#define VIC_LOG_H
-
-#ifndef _WIN32
-#include <execinfo.h>
-#endif
+#ifndef vic_log_h
+#define vic_log_h
 
 extern FILE *LOG_DEST;
 
