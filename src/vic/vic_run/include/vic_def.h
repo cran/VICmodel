@@ -8,7 +8,7 @@
  * is remove to `global.cpp` since global variables defined in head file is not
  * available in C++.
  *
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
+ * Macro `ERROR` is rename by `ERROR` to avoid redefine.
  *
  * @section DESCRIPTION
  *
@@ -67,7 +67,8 @@
 #define MISSING_S    "MISSING"    /**< missing value for strings */
 #define NODATA_VH    -1        /**< missing value for veg_hist inputs */
 #define NODATA_VEG   -1        /**< flag for veg types not in grid cell */
-#define VIC_ERROR        -999      /**< Error Flag returned by subroutines */
+#define ERROR        -999      /**< Error Flag returned by subroutines */
+#define ERROR    -999
 
 /***** Define maximum array sizes for model source code *****/
 #define MAX_LAYERS      3      /**< maximum number of soil moisture layers */
@@ -298,6 +299,8 @@ typedef struct {
 
     // output options
     size_t Noutstreams;  /**< Number of output stream */
+
+    bool SNOWF_TEMP_FROM_SOIL;        /**< If temperatures of snowfall or rainfall defined in soil parameters */
 } option_struct;
 
 /******************************************************************************
@@ -621,6 +624,9 @@ typedef struct {
     double aspect;
     double ehoriz;
     double whoriz;
+
+    double snow_max_temp;
+    double rain_min_temp;
 } soil_con_struct;
 
 /******************************************************************************

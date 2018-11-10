@@ -18,9 +18,10 @@ Source code of the VIC model (in src/vic) has the following license:
   this program; if not, write to the Free Software Foundation, Inc.,
   51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA."
 
-All licenses in the included source files have been left intact. As required by the
-VIC copyright notice, the following files are noted as being modified for use in
-this package:
+All licenses in the included source files have been left intact. To normally used
+in this R package, only source codes in src/vic/driver/shared_all and
+src/vic/vic_run are retained. And as required by the VIC copyright notice, the
+following files are noted as being modified for use in this package:
 
 - src/vic/drivers/shared_all/src/open_file.c
 - src/vic/drivers/shared_all/src/vic_time.c
@@ -28,23 +29,7 @@ this package:
 - src/vic/drivers/shared_all/src/print_library_shared.c
 - src/vic/drivers/shared_all/src/cmd_proc.c
 - src/vic/drivers/shared_all/src/vic_log.c
-- src/vic/drivers/shared_all/src/compute_derived_state_vars.c
-- src/vic/drivers/shared_all/src/compute_lake_params.c
-- src/vic/drivers/shared_all/src/generate_default_state.c
-- src/vic/vic_run/src/calc_atmos_energy_bal.c
-- src/vic/vic_run/src/calc_surf_energy_bal.c
 - src/vic/vic_run/src/CalcBlowingSnow.c
-- src/vic/vic_run/src/frozen_soil.c
-- src/vic/vic_run/src/func_surf_energy_bal.c
-- src/vic/vic_run/src/ice_melt.c
-- src/vic/vic_run/src/lakes.eb.c
-- src/vic/vic_run/src/lakes_utils.c
-- src/vic/vic_run/src/root_brent.c
-- src/vic/vic_run/src/runoff.c
-- src/vic/vic_run/src/snow_intercept.c
-- src/vic/vic_run/src/snow_melt.c
-- src/vic/vic_run/src/solve_snow.c
-- src/vic/vic_run/src/surface_fluxes.c
 - src/vic/vic_run/src/write_layer.c
 - src/vic/vic_run/src/write_vegpar.c
 - src/vic/vic_run/include/vic_def.h

@@ -1,6 +1,7 @@
 # VICmodel
-
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/VICmodel)](https://cran.r-project.org/package=VICmodel)
 [![Travis-CI Build Status](https://travis-ci.org/Sibada/VICmodel.svg?branch=master)](https://travis-ci.org/Sibada/VICmodel)
+[![CRAN version](http://www.r-pkg.org/badges/version/VICmodel)](https://cran.r-project.org/package=VICmodel)
  * Turn on travis for your repo at https://travis-ci.org/Sibada/VICmodel
 
 ## Overview
@@ -27,6 +28,12 @@ You can install VICmodel from github with:
 # Via devtools
 require(devtools)
 devtools::install_github("Sibada/VICmodel")
+```
+
+Or get it from the CRAN repository:
+
+```r
+install.packages("VICmodel")
 ```
 
 ## References

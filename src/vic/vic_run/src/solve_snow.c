@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
 * @section DESCRIPTION
 *
 * This routine was written to handle the various calls and data
@@ -224,8 +219,8 @@ solve_snow(char               overstory,
                                            veg_class,
                                            CanopLayerBnd, dryFrac, force,
                                            layer, soil_con, veg_var);
-                if (ErrorFlag == VIC_ERROR) {
-                    return (VIC_ERROR);
+                if (ErrorFlag == ERROR) {
+                    return (ERROR);
                 }
 
                 /* Store throughfall from canopy */
@@ -348,8 +343,8 @@ solve_snow(char               overstory,
                                   &energy->latent_sub, &energy->refreeze_energy,
                                   &energy->sensible, INCLUDE_SNOW, iveg, band,
                                   snow);
-            if (ErrorFlag == VIC_ERROR) {
-                return (VIC_ERROR);
+            if (ErrorFlag == ERROR) {
+                return (ERROR);
             }
 
             // store melt water

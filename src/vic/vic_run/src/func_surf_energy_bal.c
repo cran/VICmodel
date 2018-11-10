@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
  * @section DESCRIPTION
  *
  * This subroutine computes the surface energy balance for bare soil and
@@ -466,7 +461,7 @@ func_surf_energy_bal(double  Ts,
                                     EXP_TRANS);
         }
 
-        if ((int) Error == VIC_ERROR) {
+        if ((int) Error == ERROR) {
             log_err("Error solving the temperature profile");
         }
         /* Compute temperatures for calculations of ground heat flux, delta_H, and fusion */

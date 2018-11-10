@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
  * @section DESCRIPTION
  *
  * Calculate the surface energy balance.
@@ -411,7 +406,7 @@ calc_surf_energy_bal(double             Le,
                                                    &energy->sensible,
                                                    &energy->snow_flux,
                                                    &energy->error);
-                return (VIC_ERROR);
+                return (ERROR);
             }
         }
 
@@ -539,7 +534,7 @@ calc_surf_energy_bal(double             Le,
                                                        &energy->sensible,
                                                        &energy->snow_flux,
                                                        &energy->error);
-                    return (VIC_ERROR);
+                    return (ERROR);
                 }
             }
         }
@@ -585,8 +580,8 @@ calc_surf_energy_bal(double             Le,
                                   &energy->latent, &energy->latent_sub,
                                   &energy->sensible, &energy->snow_flux,
                                   &energy->error);
-    if (error == VIC_ERROR) {
-        return(VIC_ERROR);
+    if (error == ERROR) {
+        return(ERROR);
     }
     else {
         energy->error = error;
@@ -1224,5 +1219,5 @@ error_print_surf_energy_bal(double  Ts,
              "Try increasing param.SURF_DT to get model to complete cell.\n"
              "Then check output for instabilities.");
 
-    return (VIC_ERROR);
+    return (ERROR);
 }

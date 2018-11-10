@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
 * @section DESCRIPTION
 *
 * This subroutine computes dependent lake parameters from the specified
@@ -92,7 +87,7 @@ compute_lake_params(lake_con_struct *lake_con,
 
     // compute volume corresponding to mindepth
     ErrFlag = get_volume(*lake_con, lake_con->mindepth, &(lake_con->minvolume));
-    if (ErrFlag == VIC_ERROR) {
+    if (ErrFlag == ERROR) {
         log_err("Error calculating depth: depth %f volume %f",
                 lake_con->mindepth, lake_con->minvolume);
     }

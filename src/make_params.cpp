@@ -114,8 +114,17 @@ void make_soilparam(NumericVector soil_par, soil_con_struct *temp,
 
   if (options.JULY_TAVG_SUPPLIED) {
     temp->avgJulyAirTemp = soil_par[17+off+nl*12];
+    off += 1;
   }
 
+  if (options.SNOWF_TEMP_FROM_SOIL) {
+    temp->snow_max_temp = soil_par[17+off+nl*12];
+    temp->rain_min_temp = soil_par[18+off+nl*12];
+    off += 1;
+  } else {
+    temp->snow_max_temp = param.SNOW_MAX_SNOW_TEMP;
+    temp->rain_min_temp = param.SNOW_MIN_RAIN_TEMP;
+  }
   /*******************************************
    Compute Soil Layer Properties
   *******************************************/

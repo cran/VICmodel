@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
  * @section DESCRIPTION
  *
  * Calculate snow accumulation and melt
@@ -721,5 +716,5 @@ ErrorPrintSnowPackEnergyBalance(double  TSurf,
              "SNOW_DT to get model to complete cell.\nThencheck output "
              "for instabilities.");
 
-    return(VIC_ERROR);
+    return(ERROR);
 }

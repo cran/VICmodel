@@ -1,10 +1,5 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
- * @section DESCRIPTION
+* @section DESCRIPTION
 *
 * Calculates the interception and subsequent release of by the forest canopy
 * using an energy balance approach.
@@ -397,7 +392,7 @@ snow_intercept(double             Dt,
                                                     &RefreezeEnergy,
                                                     SensibleHeat,
                                                     VaporMassFlux);
-                return(VIC_ERROR);
+                return(ERROR);
             }
         }
 
@@ -833,5 +828,5 @@ error_print_canopy_energy_bal(double  Tfoliage,
              "Try increasing SNOW_DT to get model to complete cell.\n"
              "Then check output for instabilities.");
 
-    return(VIC_ERROR);
+    return(ERROR);
 }

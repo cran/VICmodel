@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
  * @section DESCRIPTION
  *
  * This routine initializes the model state (energy balance, water balance, and
@@ -184,7 +179,7 @@ generate_default_state(all_vars_struct *all_vars,
                                 soil_con->expt, soil_con->bubble,
                                 soil_con->frost_fract, soil_con->frost_slope,
                                 soil_con->FS_ACTIVE);
-                        if (ErrorFlag == VIC_ERROR) {
+                        if (ErrorFlag == ERROR) {
                             log_err("Error calculating layer temperature "
                                     "using QUICK_FLUX option");
                         }
@@ -212,7 +207,7 @@ generate_default_state(all_vars_struct *all_vars,
                             options.Nnode,
                             options.Nlayer,
                             soil_con->FS_ACTIVE);
-                        if (ErrorFlag == VIC_ERROR) {
+                        if (ErrorFlag == ERROR) {
                             log_err("Error calculating layer ice content");
                         }
                     }

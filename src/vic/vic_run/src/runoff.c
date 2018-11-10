@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
 * @section DESCRIPTION
 *
 * Calculate infiltration and runoff from the surface, gravity driven drainage
@@ -425,8 +420,8 @@ runoff(cell_data_struct  *cell,
                                                         soil_con->organic, Nnodes,
                                                         options.Nlayer,
                                                         soil_con->FS_ACTIVE);
-        if (ErrorFlag == VIC_ERROR) {
-            return (VIC_ERROR);
+        if (ErrorFlag == ERROR) {
+            return (ERROR);
         }
     }
     return (0);

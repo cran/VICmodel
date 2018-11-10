@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
  * @section DESCRIPTION
  *
  * Calculate snow accumulation and melt for the lake model
@@ -211,7 +206,7 @@ ice_melt(double            z2,
                                              z2, snow->depth, .95, 0.005,
                                              snow->surf_temp, 0, 1, 100.,
                                              .067, .0123, &snow->transport);
-        if ((int)snow->blowing_flux == VIC_ERROR) {
+        if ((int)snow->blowing_flux == ERROR) {
             log_err("Error calculating blowing snow flux");
         }
 
@@ -394,7 +389,7 @@ ice_melt(double            z2,
                                               &SnowFlux, &latent_heat,
                                               &latent_heat_sub,
                                               &sensible_heat, &LWnet);
-                    return(VIC_ERROR);
+                    return(ERROR);
                 }
             }
         }
@@ -790,5 +785,5 @@ ErrorPrintIcePackEnergyBalance(double  TSurf,
              "Try increasing SNOW_DT to get model to complete cell.\n"
              "Then check output for instabilities.");
 
-    return(VIC_ERROR);
+    return(ERROR);
 }

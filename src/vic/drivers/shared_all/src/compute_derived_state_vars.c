@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
  * @section DESCRIPTION
  *
  * This routine computes the state variables (energy balance, water balance,
@@ -174,7 +169,7 @@ compute_derived_state_vars(all_vars_struct *all_vars,
                                 soil_con->organic,
                                 options.Nnode, options.Nlayer,
                                 soil_con->FS_ACTIVE);
-                        if (ErrorFlag == VIC_ERROR) {
+                        if (ErrorFlag == ERROR) {
                             log_err("Error setting physical properties for "
                                     "soil thermal nodes");
                         }
@@ -220,7 +215,7 @@ compute_derived_state_vars(all_vars_struct *all_vars,
                                 energy[veg][band].T[0],
                                 energy[veg][band].T[1],
                                 soil_con->avg_temp);
-                        if (ErrorFlag == VIC_ERROR) {
+                        if (ErrorFlag == ERROR) {
                             log_err("Error calculating layer temperature "
                                     "using QUICK_FLUX option");
                         }
@@ -244,7 +239,7 @@ compute_derived_state_vars(all_vars_struct *all_vars,
                             soil_con->depth,
                             options.Nnode,
                             options.Nlayer);
-                        if (ErrorFlag == VIC_ERROR) {
+                        if (ErrorFlag == ERROR) {
                             log_err("Error calculating layer temperature");
                         }
                     }

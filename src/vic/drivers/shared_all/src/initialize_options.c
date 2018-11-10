@@ -95,4 +95,6 @@ initialize_options()
     options.SAVE_STATE = false;
     // output options
     options.Noutstreams = 2;
+
+    options.SNOWF_TEMP_FROM_SOIL = false;
 }

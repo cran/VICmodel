@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
  * @section DESCRIPTION
  *
  * This subroutine redistributes soil properties based on the thermal solutions
@@ -88,8 +83,8 @@ calc_layer_average_thermal_props(energy_bal_struct *energy,
                                                           energy->T[0],
                                                           energy->T[1],
                                                           soil_con->avg_temp);
-        if (ErrorFlag == VIC_ERROR) {
-            return (VIC_ERROR);
+        if (ErrorFlag == ERROR) {
+            return (ERROR);
         }
         ErrorFlag = estimate_layer_ice_content_quick_flux(layer,
                                                           soil_con->depth,
@@ -99,8 +94,8 @@ calc_layer_average_thermal_props(energy_bal_struct *energy,
                                                           soil_con->frost_fract,
                                                           soil_con->frost_slope,
                                                           soil_con->FS_ACTIVE);
-        if (ErrorFlag == VIC_ERROR) {
-            return (VIC_ERROR);
+        if (ErrorFlag == ERROR) {
+            return (ERROR);
         }
     }
     else {
@@ -120,8 +115,8 @@ calc_layer_average_thermal_props(energy_bal_struct *energy,
                                                soil_con->depth,
                                                Nnodes,
                                                options.Nlayer);
-        if (ErrorFlag == VIC_ERROR) {
-            return (VIC_ERROR);
+        if (ErrorFlag == ERROR) {
+            return (ERROR);
         }
         ErrorFlag = estimate_layer_ice_content(layer,
                                                tmpT,
@@ -134,8 +129,8 @@ calc_layer_average_thermal_props(energy_bal_struct *energy,
                                                Nnodes,
                                                options.Nlayer,
                                                soil_con->FS_ACTIVE);
-        if (ErrorFlag == VIC_ERROR) {
-            return (VIC_ERROR);
+        if (ErrorFlag == ERROR) {
+            return (ERROR);
         }
     }
 
@@ -443,7 +438,7 @@ calc_soil_thermal_fluxes(int       Nnodes,
                                               gamma[j - 1], A[j], B[j], C[j],
                                               D[j],
                                               E[j]);
-                        return (VIC_ERROR);
+                        return (ERROR);
                     }
                 }
             }
@@ -501,7 +496,7 @@ calc_soil_thermal_fluxes(int       Nnodes,
                                               expt[Nnodes - 1], ice[Nnodes - 1],
                                               gamma[Nnodes - 2],
                                               A[j], B[j], C[j], D[j], E[j]);
-                        return (VIC_ERROR);
+                        return (ERROR);
                     }
                 }
             }
@@ -553,7 +548,7 @@ calc_soil_thermal_fluxes(int       Nnodes,
             }
             log_err("Cannot solve temperature profile:\n"
                     "\tToo Many Iterations in solve_T_profile");
-            return (VIC_ERROR);
+            return (ERROR);
         }
     }
 
@@ -639,7 +634,7 @@ error_print_solve_T_profile(double  T,
              "Try increasing SOIL_DT to get model to complete cell.\n"
              "Then check output for instabilities.");
 
-    return(VIC_ERROR);
+    return(ERROR);
 }
 
 /******************************************************************************

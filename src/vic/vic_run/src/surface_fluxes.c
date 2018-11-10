@@ -1,9 +1,4 @@
 /******************************************************************************
- * @section MODIFICATION
- *
- * Modification by Ruida Zhong for the R package VICmodel on Sep 18th, 2018:
- * Macro `ERROR` is rename by `VIC_ERROR` to avoid redefine.
- *
  * @section DESCRIPTION
 *
 * This routine computes all surface fluxes, and solves the snow accumulation
@@ -454,8 +449,8 @@ surface_fluxes(bool                 overstory,
                                                      displacement[1],
                                                      roughness[1],
                                                      &step_snow.transport);
-            if ((int) step_snow.blowing_flux == VIC_ERROR) {
-                return (VIC_ERROR);
+            if ((int) step_snow.blowing_flux == ERROR) {
+                return (ERROR);
             }
             step_snow.blowing_flux *= step_dt / CONST_RHOFW; /* m/time step */
         }
@@ -572,8 +567,8 @@ surface_fluxes(bool                 overstory,
                                        soil_con,
                                        &(iter_snow_veg_var));
 
-                if (step_melt == VIC_ERROR) {
-                    return (VIC_ERROR);
+                if (step_melt == ERROR) {
+                    return (ERROR);
                 }
 
                 /* Check that the snow surface temperature was estimated, if not
@@ -626,9 +621,9 @@ surface_fluxes(bool                 overstory,
                                              &(iter_snow), soil_con,
                                              &iter_soil_veg_var);
 
-                if ((int) Tsurf == VIC_ERROR) {
+                if ((int) Tsurf == ERROR) {
                     // Return error flag to skip rest of grid cell
-                    return (VIC_ERROR);
+                    return (ERROR);
                 }
 
                 if (INCLUDE_SNOW) {
@@ -668,9 +663,9 @@ surface_fluxes(bool                 overstory,
                        sum of latent heats from the ground and foliage, and iterate
                        on the temperature used for the sensible heat flux from the
                        canopy air to the mixing level */
-                    if ((int) Tcanopy == VIC_ERROR) {
+                    if ((int) Tcanopy == ERROR) {
                         // Return error flag to skip rest of grid cell
-                        return (VIC_ERROR);
+                        return (ERROR);
                     }
                 }
                 else {
